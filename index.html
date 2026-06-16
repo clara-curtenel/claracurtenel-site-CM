@@ -162,74 +162,83 @@
   </div>
 </section>
 
-<!-- ═══ STATS ═══ -->
+<!-- ═══ STATS (Version Premium & Compacte) ═══ -->
 <style>
-  .stats-grid-custom {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem 1rem; /* Espace bien aéré sur mobile */
-    text-align: center;
-    padding: 3rem 1rem;
+  .stats-bar-elegant {
+    padding: 2rem 0; /* Hauteur très réduite pour ne pas envahir l'écran */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
   
-  @media (min-width: 768px) {
-    .stats-grid-custom {
-      grid-template-columns: repeat(4, 1fr);
-      padding: 4rem 2rem;
-    }
-  }
-
-  .stat-item-custom .stat-number-wrapper {
+  .stats-container-flex {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: baseline; /* Aligne le chiffre et le + sur la même ligne de base */
-    gap: 2px;
+    align-items: center;
+    gap: 1.5rem 2rem; /* Espacement maîtrisé sur mobile */
+  }
+
+  .stat-item-elegant {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Le chiffre et le texte sont placés côte à côte */
+  }
+
+  .stat-number-elegant {
+    font-size: 2.2rem; /* Taille affinée, moins massive */
+    font-weight: 300; /* Typographie plus fine et élégante */
     color: #f4b8c8;
-    margin-bottom: 0.8rem;
-  }
-
-  .stat-item-custom .stat-number-wrapper .counter,
-  .stat-item-custom .stat-number-wrapper span {
-    font-size: 3rem; /* Gros chiffres impactants */
-    font-weight: 700;
     line-height: 1;
+    display: flex;
+    align-items: center;
   }
 
-  .stat-item-custom .stat-text {
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.7); /* Adoucit le texte pour un côté premium */
-    display: block;
+  .stat-text-elegant {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5); /* Texte adouci pour le contraste */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  /* Sur ordinateur, on répartit les 4 blocs sur toute la largeur */
+  @media (min-width: 992px) {
+    .stats-container-flex {
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+    .stat-number-elegant {
+      font-size: 2.6rem;
+    }
   }
 </style>
 
-<section class="stats-bar">
+<section class="stats-bar-elegant">
   <div class="container">
-    <div class="stats-grid-custom">
-      <div class="stat-item-custom">
-        <div class="stat-number-wrapper">
-          <span class="counter" data-target="8">0</span><span>+</span>
-        </div>
-        <span class="stat-text">Clients accompagnés</span>
+    <div class="stats-container-flex">
+      
+      <div class="stat-item-elegant">
+        <div class="stat-number-elegant"><span class="counter" data-target="8">0</span>+</div>
+        <div class="stat-text-elegant">Clients<br>accompagnés</div>
       </div>
-      <div class="stat-item-custom">
-        <div class="stat-number-wrapper">
-          <span class="counter" data-target="100">0</span><span>+</span>
-        </div>
-        <span class="stat-text">Publications créées</span>
+      
+      <div class="stat-item-elegant">
+        <div class="stat-number-elegant"><span class="counter" data-target="100">0</span>+</div>
+        <div class="stat-text-elegant">Publications<br>créées</div>
       </div>
-      <div class="stat-item-custom">
-        <div class="stat-number-wrapper">
-          <span class="counter" data-target="3">0</span>
-        </div>
-        <span class="stat-text">Ans d'expérience</span>
+      
+      <div class="stat-item-elegant">
+        <div class="stat-number-elegant"><span class="counter" data-target="3">0</span></div>
+        <div class="stat-text-elegant">Ans<br>d'expérience</div>
       </div>
-      <div class="stat-item-custom">
-        <div class="stat-number-wrapper">
-          <span>100</span><span>%</span>
-        </div>
-        <span class="stat-text">Clients satisfaits</span>
+      
+      <div class="stat-item-elegant">
+        <div class="stat-number-elegant">100%</div>
+        <div class="stat-text-elegant">Clients<br>satisfaits</div>
       </div>
+
     </div>
   </div>
 </section>
