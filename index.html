@@ -164,39 +164,42 @@
 
 <!-- ═══ STATS ═══ -->
 <style>
-  /* Correction pour la barre de statistiques */
   .stats-grid-custom {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 1rem; /* Espace bien aéré sur mobile */
     text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 1rem;
   }
   
   @media (min-width: 768px) {
     .stats-grid-custom {
-      grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur PC */
+      grid-template-columns: repeat(4, 1fr);
+      padding: 4rem 2rem;
     }
   }
 
-  .stat-item-custom strong,
-  .stat-item-custom .counter {
-    display: block;
-    font-size: 2.5rem !important; /* Force le chiffre à être grand */
-    font-weight: 700;
-    color: #f4b8c8; /* Ton rose signature */
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    font-family: inherit;
+  .stat-item-custom .stat-number-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: baseline; /* Aligne le chiffre et le + sur la même ligne de base */
+    gap: 2px;
+    color: #f4b8c8;
+    margin-bottom: 0.8rem;
   }
 
-  .stat-item-custom span.stat-text {
+  .stat-item-custom .stat-number-wrapper .counter,
+  .stat-item-custom .stat-number-wrapper span {
+    font-size: 3rem; /* Gros chiffres impactants */
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .stat-item-custom .stat-text {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7); /* Adoucit le texte pour un côté premium */
     display: block;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #ffffff;
-    text-transform: none; /* Enlève les majuscules forcées */
-    letter-spacing: normal;
   }
 </style>
 
@@ -204,24 +207,33 @@
   <div class="container">
     <div class="stats-grid-custom">
       <div class="stat-item-custom">
-        <strong><span class="counter" data-target="8">0</span>+</strong>
+        <div class="stat-number-wrapper">
+          <span class="counter" data-target="8">0</span><span>+</span>
+        </div>
         <span class="stat-text">Clients accompagnés</span>
       </div>
       <div class="stat-item-custom">
-        <strong><span class="counter" data-target="100">0</span>+</strong>
+        <div class="stat-number-wrapper">
+          <span class="counter" data-target="100">0</span><span>+</span>
+        </div>
         <span class="stat-text">Publications créées</span>
       </div>
       <div class="stat-item-custom">
-        <strong><span class="counter" data-target="3">0</span></strong>
+        <div class="stat-number-wrapper">
+          <span class="counter" data-target="3">0</span>
+        </div>
         <span class="stat-text">Ans d'expérience</span>
       </div>
       <div class="stat-item-custom">
-        <strong>100%</strong>
+        <div class="stat-number-wrapper">
+          <span>100</span><span>%</span>
+        </div>
         <span class="stat-text">Clients satisfaits</span>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- ═══ CLIENTS (logo carousel) ═══ -->
 <section class="section-pad-sm clients-section">
