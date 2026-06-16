@@ -163,27 +163,61 @@
 </section>
 
 <!-- ═══ STATS ═══ -->
+<style>
+  /* Correction pour la barre de statistiques */
+  .stats-grid-custom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    gap: 2rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  @media (min-width: 768px) {
+    .stats-grid-custom {
+      grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur PC */
+    }
+  }
+
+  .stat-item-custom strong,
+  .stat-item-custom .counter {
+    display: block;
+    font-size: 2.5rem !important; /* Force le chiffre à être grand */
+    font-weight: 700;
+    color: #f4b8c8; /* Ton rose signature */
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-family: inherit;
+  }
+
+  .stat-item-custom span.stat-text {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: none; /* Enlève les majuscules forcées */
+    letter-spacing: normal;
+  }
+</style>
+
 <section class="stats-bar">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
+    <div class="stats-grid-custom">
+      <div class="stat-item-custom">
         <strong><span class="counter" data-target="8">0</span>+</strong>
-        <span>Clients accompagnés</span>
+        <span class="stat-text">Clients accompagnés</span>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
+      <div class="stat-item-custom">
         <strong><span class="counter" data-target="100">0</span>+</strong>
-        <span>Publications créées</span>
+        <span class="stat-text">Publications créées</span>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
+      <div class="stat-item-custom">
         <strong><span class="counter" data-target="3">0</span></strong>
-        <span>Ans d'expérience</span>
+        <span class="stat-text">Ans d'expérience</span>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
+      <div class="stat-item-custom">
         <strong>100%</strong>
-        <span>Clients satisfaits</span>
+        <span class="stat-text">Clients satisfaits</span>
       </div>
     </div>
   </div>
