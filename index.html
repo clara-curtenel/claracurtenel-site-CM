@@ -162,60 +162,62 @@
   </div>
 </section>
 
-<!-- ═══ STATS (Version Premium & Compacte) ═══ -->
+<!-- ═══ STATS ═══ -->
 <style>
-  .stats-bar-elegant {
-    padding: 2rem 0; /* Hauteur très réduite pour ne pas envahir l'écran */
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  /* On force le fond bleu nuit au cas où et on gère l'espacement */
+  .stats-bar {
+    background-color: #0d1b2a; /* Ton bleu nuit */
+    padding: 2.5rem 0;
   }
   
   .stats-container-flex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem 2rem; /* Espacement maîtrisé sur mobile */
+    gap: 1.5rem;
   }
 
   .stat-item-elegant {
     display: flex;
     align-items: center;
-    gap: 0.8rem; /* Le chiffre et le texte sont placés côte à côte */
+    justify-content: center;
+    gap: 0.8rem;
+    /* Sur mobile, on force 2 éléments par ligne pour gagner de la place */
+    flex: 1 1 40%; 
   }
 
   .stat-number-elegant {
-    font-size: 2.2rem; /* Taille affinée, moins massive */
-    font-weight: 300; /* Typographie plus fine et élégante */
+    font-size: 2.2rem;
+    font-weight: 300;
     color: #f4b8c8;
     line-height: 1;
-    display: flex;
-    align-items: center;
   }
 
   .stat-text-elegant {
     font-size: 0.75rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.5); /* Texte adouci pour le contraste */
+    color: #ffffff; /* Blanc pur pour bien ressortir sur le fond sombre */
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-align: left;
     line-height: 1.4;
   }
 
-  /* Sur ordinateur, on répartit les 4 blocs sur toute la largeur */
-  @media (min-width: 992px) {
-    .stats-container-flex {
-      justify-content: space-between;
-      padding: 0 1rem;
+  @media (min-width: 768px) {
+    .stat-item-elegant {
+      flex: 1 1 auto; /* S'aligne sur 1 seule ligne sur ordinateur */
     }
     .stat-number-elegant {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
+    }
+    .stat-text-elegant {
+      font-size: 0.85rem;
     }
   }
 </style>
 
-<section class="stats-bar-elegant">
+<section class="stats-bar">
   <div class="container">
     <div class="stats-container-flex">
       
