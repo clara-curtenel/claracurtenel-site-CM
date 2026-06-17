@@ -265,6 +265,107 @@
 </section>
 
 <!-- ═══ SERVICES (aperçu) ═══ -->
+<style>
+  /* GESTION DE L'AFFICHAGE PC vs MOBILE */
+  .mobile-timeline { display: none; }
+  .desktop-grid { display: grid; }
+
+  @media (max-width: 768px) {
+    .desktop-grid { display: none; }
+    .mobile-timeline { display: block; }
+  }
+
+  /* STYLE DE LA FRISE CHRONOLOGIQUE (MOBILE) */
+  .timeline-container {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    border-left: 2px solid rgba(244, 184, 200, 0.3); /* Ligne verticale rose */
+  }
+
+  .timeline-step {
+    position: relative;
+    margin-bottom: 2rem;
+    cursor: pointer;
+  }
+
+  /* Le point sur la ligne */
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    left: -1.9rem;
+    top: 0.3rem;
+    width: 12px;
+    height: 12px;
+    background-color: #0d1b2a; 
+    border: 2px solid #f4b8c8;
+    border-radius: 50%;
+  }
+
+  .timeline-num {
+    font-size: 0.8rem;
+    color: #f4b8c8;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-title {
+    font-size: 1.15rem;
+    margin: 0;
+    color: #ffffff;
+    display: inline-block;
+    border-bottom: 1px dashed rgba(255,255,255,0.3);
+  }
+
+  /* STYLE DU POP-UP (MODAL) */
+  .service-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(13, 27, 42, 0.85); /* Fond sombre transparent */
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .service-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .service-modal-content {
+    background: #1a2f50; /* Couleur de tes cartes */
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .service-modal-overlay.active .service-modal-content {
+    transform: translateY(0);
+  }
+
+  .close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+</style>
+
 <section class="section-pad services-preview">
   <div class="container">
     <div class="section-header reveal">
@@ -272,50 +373,115 @@
       <h2>Ce que je fais pour vous</h2>
       <p>De la stratégie à la publication, je prends en charge votre communication digitale de A à Z, adaptée à votre secteur et vos objectifs.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
+
+    <div class="services-grid desktop-grid reveal">
+      <div class="service-card">
         <span style="font-weight: 700; color: #f4b8c8; font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">01.</span>
         <h3>Gestion des réseaux sociaux</h3>
         <p>Animation quotidienne, planning éditorial, création de contenu et modération de votre communauté.</p>
         <a href="prestations.html" class="service-link">En savoir plus →</a>
       </div>
-      <div class="service-card reveal delay-1">
+      <div class="service-card">
         <span style="font-weight: 700; color: #f4b8c8; font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">02.</span>
         <h3>Création de contenu</h3>
         <p>Visuels, vidéos courtes, stories, reels et textes copywrités qui reflètent votre identité de marque.</p>
         <a href="prestations.html" class="service-link">En savoir plus →</a>
       </div>
-      <div class="service-card reveal delay-2">
+      <div class="service-card">
         <span style="font-weight: 700; color: #f4b8c8; font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">03.</span>
         <h3>Stratégie digitale</h3>
         <p>Audit de votre présence en ligne, définition de vos persona et construction d'une stratégie de contenu sur mesure.</p>
         <a href="prestations.html" class="service-link">En savoir plus →</a>
       </div>
-      <div class="service-card reveal delay-3">
+      <div class="service-card">
         <span style="font-weight: 700; color: #f4b8c8; font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">04.</span>
         <h3>Reporting & analyse</h3>
         <p>Suivi des performances, analyse des KPIs et ajustement continu de la stratégie pour maximiser vos résultats.</p>
         <a href="prestations.html" class="service-link">En savoir plus →</a>
       </div>
-      <div class="service-card reveal delay-2">
+      <div class="service-card">
         <span style="font-weight: 700; color: #f4b8c8; font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">05.</span>
         <h3>Influence & partenariats</h3>
         <p>Identification d'influenceurs, gestion de collaborations et mise en place de campagnes UGC.</p>
         <a href="prestations.html" class="service-link">En savoir plus →</a>
       </div>
-      <div class="service-card reveal delay-3">
+      <div class="service-card">
         <span style="font-weight: 700; color: #f4b8c8; font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">06.</span>
         <h3>Conseil & formation</h3>
         <p>Formations personnalisées pour vos équipes, ateliers et accompagnement dans l'autonomisation digitale.</p>
         <a href="prestations.html" class="service-link">En savoir plus →</a>
       </div>
     </div>
+
+    <div class="mobile-timeline reveal">
+      <div class="timeline-container">
+        
+        <div class="timeline-step" onclick="openModal('01.', 'Gestion des réseaux sociaux', 'Animation quotidienne, planning éditorial, création de contenu et modération de votre communauté.')">
+          <span class="timeline-num">01.</span>
+          <h3 class="timeline-title">Gestion des réseaux sociaux</h3>
+        </div>
+        
+        <div class="timeline-step" onclick="openModal('02.', 'Création de contenu', 'Visuels, vidéos courtes, stories, reels et textes copywrités qui reflètent votre identité de marque.')">
+          <span class="timeline-num">02.</span>
+          <h3 class="timeline-title">Création de contenu</h3>
+        </div>
+        
+        <div class="timeline-step" onclick="openModal('03.', 'Stratégie digitale', 'Audit de votre présence en ligne, définition de vos persona et construction d\'une stratégie de contenu sur mesure.')">
+          <span class="timeline-num">03.</span>
+          <h3 class="timeline-title">Stratégie digitale</h3>
+        </div>
+        
+        <div class="timeline-step" onclick="openModal('04.', 'Reporting & analyse', 'Suivi des performances, analyse des KPIs et ajustement continu de la stratégie pour maximiser vos résultats.')">
+          <span class="timeline-num">04.</span>
+          <h3 class="timeline-title">Reporting & analyse</h3>
+        </div>
+        
+        <div class="timeline-step" onclick="openModal('05.', 'Influence & partenariats', 'Identification d\'influenceurs, gestion de collaborations et mise en place de campagnes UGC.')">
+          <span class="timeline-num">05.</span>
+          <h3 class="timeline-title">Influence & partenariats</h3>
+        </div>
+        
+        <div class="timeline-step" onclick="openModal('06.', 'Conseil & formation', 'Formations personnalisées pour vos équipes, ateliers et accompagnement dans l\'autonomisation digitale.')">
+          <span class="timeline-num">06.</span>
+          <h3 class="timeline-title">Conseil & formation</h3>
+        </div>
+
+      </div>
+    </div>
+
     <div class="text-center reveal" style="margin-top: 3rem;">
       <a href="prestations.html" class="btn btn-primary">Toutes mes prestations →</a>
     </div>
   </div>
-</section>
 
+  <div class="service-modal-overlay" id="serviceModal" onclick="closeModal(event)">
+    <div class="service-modal-content">
+      <button class="close-modal-btn" onclick="closeModal(event, true)">×</button>
+      <span id="modalNum" style="font-weight: 700; color: #f4b8c8; font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">00.</span>
+      <h3 id="modalTitle" style="color: #ffffff; margin-bottom: 1rem;">Titre</h3>
+      <p id="modalDesc" style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Description</p>
+      <a href="prestations.html" class="btn btn-outline" style="display: inline-block; width: 100%; text-align: center;">En savoir plus →</a>
+    </div>
+  </div>
+
+  <script>
+    function openModal(num, title, desc) {
+      document.getElementById('modalNum').textContent = num;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('serviceModal').classList.add('active');
+      document.body.style.overflow = 'hidden'; // Empêche le fond de défiler
+    }
+
+    function closeModal(event, forceClose = false) {
+      // Ferme si on clique sur la croix OU en dehors de la boîte
+      if (forceClose || event.target.id === 'serviceModal') {
+        document.getElementById('serviceModal').classList.remove('active');
+        document.body.style.overflow = 'auto'; // Réactive le défilement
+      }
+    }
+  </script>
+</section>
 <!-- ═══ À PROPOS (teaser) ═══ -->
 <section class="section-pad about-teaser">
   <div class="container">
