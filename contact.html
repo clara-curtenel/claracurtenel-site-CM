@@ -116,18 +116,108 @@
         </div>
       </div>
       
-      <div class="contact-form-wrapper animate-up delay-3">
-        <div class="form-card" style="text-align: center; padding: 3rem 2rem;">
-          <h2>Envoyez-moi un message</h2>
-          <p style="margin-bottom: 2rem;">Pour me parler de votre projet et obtenir un devis personnalisé, merci de remplir ce court formulaire.</p>
+     <div class="contact-form-wrapper animate-up delay-3">
+        <div class="form-card" style="text-align: left; padding: 3rem 2rem; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+          <h2 style="text-align: center; margin-bottom: 0.5rem; color: #0d1b2a;">Parlez-moi de votre projet</h2>
+          <p style="text-align: center; margin-bottom: 2rem; color: #64748b; font-size: 0.95rem;">Complétez ce formulaire pour m'en dire plus sur vos besoins. Je vous garantis une réponse personnalisée sous 48 heures ouvrées.</p>
 
-          <a href="https://forms.gle/qqcCWcBKkFvwsWsz7" target="_blank" rel="noopener noreferrer" class="btn btn-pink" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem;">
-            Remplir le formulaire 🚀
-          </a>
-          
-          <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
-            <em>Le formulaire s'ouvrira dans un nouvel onglet.</em>
-          </p>
+          <!-- ═══ NOUVEAU FORMULAIRE COMPLET ═══ -->
+          <!-- N'oublie pas de remplacer "TON_LIEN_FORMSPREE" par ton vrai lien généré à l'étape précédente -->
+          <form action="TON_LIEN_FORMSPREE" method="POST" class="custom-form">
+            
+            <!-- Ligne 1 : Nom et Entreprise -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+              <div class="form-group">
+                <label for="nom" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Nom et Prénom</label>
+                <input type="text" id="nom" name="Nom_et_Prenom" placeholder="Ex: Jane Doe" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
+              </div>
+              
+              <div class="form-group">
+                <label for="entreprise" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Nom de l'entreprise *</label>
+                <input type="text" id="entreprise" name="Entreprise" required placeholder="Ex: Ma Super Boîte" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
+              </div>
+            </div>
+
+            <!-- Ligne 2 : Email et Liens -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+              <div class="form-group">
+                <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Adresse E-mail *</label>
+                <input type="email" id="email" name="Email" required placeholder="Ex: jane@entreprise.com" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
+              </div>
+              
+              <div class="form-group">
+                <label for="liens" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Site web ou réseaux sociaux</label>
+                <input type="text" id="liens" name="Liens_Web" placeholder="Ex: www.mon-site.com" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
+              </div>
+            </div>
+
+            <!-- Objectifs (Cases à cocher) -->
+            <div class="form-group" style="margin-bottom: 1.5rem; background: #f8fafc; padding: 1.2rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <label style="display: block; margin-bottom: 1rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Quels sont vos objectifs principaux ? *</label>
+              <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Objectifs" value="Générer des leads" style="margin-top: 0.2rem; cursor: pointer;"> Générer de nouveaux leads et contacts qualifiés
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Objectifs" value="Augmenter la notoriété" style="margin-top: 0.2rem; cursor: pointer;"> Augmenter la notoriété de votre marque et sa visibilité
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Objectifs" value="Créer une communauté" style="margin-top: 0.2rem; cursor: pointer;"> Créer une communauté engagée et fidèle
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Objectifs" value="Améliorer l'image" style="margin-top: 0.2rem; cursor: pointer;"> Améliorer l'image de marque et la crédibilité
+                </label>
+              </div>
+            </div>
+
+            <!-- Prestations (Cases à cocher) -->
+            <div class="form-group" style="margin-bottom: 1.5rem; background: #f8fafc; padding: 1.2rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <label style="display: block; margin-bottom: 1rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Quelles prestations vous intéressent le plus ?</label>
+              <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Prestations" value="Création de contenu visuel" style="margin-top: 0.2rem; cursor: pointer;"> Création de contenu visuel (photos, infographies)
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Prestations" value="Montage vidéo TikTok/Reels" style="margin-top: 0.2rem; cursor: pointer;"> Montage vidéo dynamique pour Reels / TikTok
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Prestations" value="Stratégie digitale" style="margin-top: 0.2rem; cursor: pointer;"> Élaboration et mise en place d'une stratégie marketing digitale complète
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Prestations" value="Gestion et modération" style="margin-top: 0.2rem; cursor: pointer;"> Gestion quotidienne des comptes et modération
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Prestations" value="Analyse et reporting" style="margin-top: 0.2rem; cursor: pointer;"> Analyse de performance et reporting mensuel
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: #475569; cursor: pointer;">
+                  <input type="checkbox" name="Prestations" value="Autre" style="margin-top: 0.2rem; cursor: pointer;"> Autre
+                </label>
+              </div>
+            </div>
+
+            <!-- Budget (Menu déroulant) -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="budget" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Quel est votre budget mensuel estimé ?</label>
+              <select id="budget" name="Budget" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; background-color: #ffffff; cursor: pointer; box-sizing: border-box;">
+                <option value="" disabled selected>Sélectionnez une tranche</option>
+                <option value="Moins de 500€">Moins de 500€</option>
+                <option value="500€ - 1000€">500€ - 1000€</option>
+                <option value="1000€ - 2000€">1000€ - 2000€</option>
+                <option value="Plus de 2000€">Plus de 2000€</option>
+              </select>
+            </div>
+
+            <!-- Zone de texte libre -->
+            <div class="form-group" style="margin-bottom: 2rem;">
+              <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Pouvez-vous m'en dire un peu plus sur votre projet ?</label>
+              <textarea id="message" name="Message_Projet" rows="5" placeholder="Contexte actuel, défis, historique..." style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-pink" style="width: 100%; font-size: 1.1rem; padding: 1rem; border: none; cursor: pointer; font-weight: 600; border-radius: 8px;">
+              Envoyer ma demande 🚀
+            </button>
+          </form>
+
         </div>
       </div>
 
