@@ -210,16 +210,80 @@
   </div>
 </section>
 
-<!-- ═══ CTA ═══ -->
+<!-- ═══ CTA FINAL ═══ -->
+<style>
+  /* On force le texte de la boîte en blanc */
+  .cta-box h2 {
+    color: #ffffff !important;
+  }
+  .cta-box p {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  /* Style pour le badge (rose clair lumineux) */
+  .badge-light-pink {
+    display: inline-block;
+    background-color: rgba(244, 184, 200, 0.15);
+    color: #f4b8c8;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Style pour le bouton principal (fond rose, texte noir) */
+  .btn-primary-light {
+    background-color: #f4b8c8 !important;
+    color: #000000 !important;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+  }
+  .btn-primary-light:hover {
+    opacity: 0.8;
+  }
+  
+  /* Style pour le bouton secondaire (contour blanc, texte blanc) */
+  .btn-outline-light {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    font-weight: 500;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  .btn-outline-light:hover {
+    border-color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+</style>
+
 <section class="cta-section reveal">
   <div class="container">
-    <div class="cta-box">
-      <span class="badge badge--navy">Votre projet ici ?</span>
-      <h2>Créons quelque chose ensemble.</h2>
-      <p>Ce portfolio ne demande qu'à grandir. Faites partie des prochaines réalisations !</p>
+    <div class="cta-box" style="text-align: center;">
+      <span class="badge-light-pink">Passons à l'action</span>
+      <h2>Prête à booster votre présence ?</h2>
+      <p style="max-width: 600px; margin: 0 auto;">Dites-moi ce dont vous avez besoin, je vous prépare une proposition sous 48h.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-primary">Démarrer un projet →</a>
-        <a href="prestations.html" class="btn btn-outline-white">Mes prestations</a>
+        <a href="contact.html" class="btn-primary-light">Demander un devis gratuit →</a>
+        <a href="portfolio.html" class="btn-outline-light">Voir mes réalisations</a>
       </div>
     </div>
   </div>
