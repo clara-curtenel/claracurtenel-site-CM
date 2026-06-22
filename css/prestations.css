@@ -24,10 +24,7 @@
 .services-detail { background: var(--off-white); }
 
 .service-full-card {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 4rem;
-  align-items: start;
+  display: block; /* On supprime la grille, le texte prend toute la place */
   background: var(--white);
   border-radius: var(--radius-lg);
   padding: 3.5rem;
@@ -41,24 +38,10 @@
   transform: translateY(-3px);
 }
 
-.service-full-card.reverse {
-  grid-template-columns: 1fr 140px;
-}
-
-.service-full-card.reverse .sfc-icon {
-  order: 2;
-}
-
-.sfc-icon {
-  font-size: 4rem;
-  background: var(--pink-light);
-  border-radius: var(--radius);
-  width: 120px; height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
+/* On peut supprimer ces classes qui ne servent plus à rien sans les icônes */
+/* .service-full-card.reverse { ... } */
+/* .service-full-card.reverse .sfc-icon { ... } */
+/* .sfc-icon { ... } */
 
 .sfc-content h2 { font-size: 1.8rem; margin: 0.8rem 0 1.2rem; color: var(--navy); }
 .sfc-content p { font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
