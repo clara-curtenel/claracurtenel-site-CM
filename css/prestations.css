@@ -20,17 +20,20 @@
 .page-hero h1 { color: var(--white); margin-bottom: 1.2rem; }
 .page-hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; max-width: 580px; margin: 0 auto; }
 
-/* ── Service full cards ── */
+/* ── Service full cards (NOUVELLE VERSION ÉPURÉE SANS ICÔNES) ── */
 .services-detail { background: var(--off-white); }
 
+/* 1. Règle principale pour toutes les cartes (Bureau + Mobile) */
 .service-full-card {
-  display: block; /* On supprime la grille, le texte prend toute la place */
+  display: block !important; /* On force le mode Block partout */
+  width: 100% !important;   /* On force 100% de largeur partout */
   background: var(--white);
   border-radius: var(--radius-lg);
-  padding: 3.5rem;
+  padding: 3.5rem;          /* Grand padding pour le bureau */
   margin-bottom: 2rem;
   border: 1px solid var(--border);
   transition: var(--transition);
+  box-sizing: border-box;    /* Precaution pour le calcul de largeur */
 }
 
 .service-full-card:hover {
@@ -38,10 +41,11 @@
   transform: translateY(-3px);
 }
 
-/* On peut supprimer ces classes qui ne servent plus à rien sans les icônes */
-/* .service-full-card.reverse { ... } */
-/* .service-full-card.reverse .sfc-icon { ... } */
-/* .sfc-icon { ... } */
+/* 2. On nettoie les anciennes classes qui ne servent plus à rien */
+/* Le .sfc-content prend naturellement toute la place dans un .service-full-card en block */
+.sfc-content {
+  width: 100%;
+}
 
 .sfc-content h2 { font-size: 1.8rem; margin: 0.8rem 0 1.2rem; color: var(--navy); }
 .sfc-content p { font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
@@ -83,6 +87,34 @@
   border-radius: 50px;
 }
 
+/* 3. ADAPTATION POUR ÉCRANS MOYENS (Tablettes < 1024px) */
+@media (max-width: 1024px) {
+  /* On s'assure que rien ne réactive la grille ici */
+  .service-full-card,
+  .service-full-card.reverse {
+    display: block !important;
+    grid-template-columns: none !important; /* Annule l'ancienne grille mobile */
+    gap: 0 !important;
+  }
+  
+  /* On réduit un peu le padding pour que ça respire */
+  .service-full-card {
+    padding: 2.5rem;
+  }
+}
+
+/* 4. ADAPTATION POUR PETITS ÉCRANS (Téléphones < 600px) */
+@media (max-width: 600px) {
+  /* Padding encore plus petit pour pas gâcher de place */
+  .service-full-card {
+    padding: 1.5rem;
+  }
+  
+  /* Les listes passent sur une seule colonne */
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+}
 /* ── Process ── */
 .process-section { background: var(--white); }
 
