@@ -170,32 +170,38 @@
         .select-options input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; accent-color: #f4b8c8; }
       </style>
 
+      <!-- PARTIE DROITE : FORMULAIRE CONNECTÉ À GOOGLE FORMS -->
       <div class="contact-form-wrapper animate-up delay-3" style="width: 100%; box-sizing: border-box;">
         <div class="form-card">
           <h2 style="text-align: center; margin-bottom: 0.5rem; color: #0d1b2a;">Parlez-moi de votre projet</h2>
           <p style="text-align: center; margin-bottom: 2rem; color: #64748b; font-size: 0.95rem;">Complétez ce formulaire pour m'en dire plus sur vos besoins. Je vous garantis une réponse personnalisée sous 48 heures ouvrées.</p>
 
-          <form action="TON_LIEN_FORMSPREE" method="POST" class="custom-form">
+          <!-- IFRAME CACHÉE POUR ÉVITER LA REDIRECTION GOOGLE -->
+          <script>var submitted = false;</script>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('Merci ! Votre demande a bien été envoyée. Je vous recontacte sous 48h.'); window.location='contact.html'; }"></iframe>
+
+          <!-- FORMULAIRE CONNECTÉ -->
+          <form action="https://docs.google.com/forms/d/e/1FAIpQLSfxkhc8I-whz2gNiR_qKom9UlUJc77OIihwQitON56kRkb8WQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="custom-form">
             
             <div class="form-grid-2">
               <div class="form-group">
                 <label for="nom" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Nom et Prénom</label>
-                <input type="text" id="nom" name="Nom_et_Prenom" placeholder="Ex: Jane Doe" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
+                <input type="text" id="nom" name="entry.1646828073" placeholder="Ex: Jane Doe" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
               </div>
               <div class="form-group">
                 <label for="entreprise" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Nom de l'entreprise *</label>
-                <input type="text" id="entreprise" name="Entreprise" required placeholder="Ex: Ma Super Boîte" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
+                <input type="text" id="entreprise" name="entry.302629391" required placeholder="Ex: Ma Super Boîte" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
               </div>
             </div>
 
             <div class="form-grid-2">
               <div class="form-group">
                 <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Adresse E-mail *</label>
-                <input type="email" id="email" name="Email" required placeholder="Ex: jane@entreprise.com" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
+                <input type="email" id="email" name="entry.1079875669" required placeholder="Ex: jane@entreprise.com" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
               </div>
               <div class="form-group">
                 <label for="liens" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Site web ou réseaux sociaux</label>
-                <input type="text" id="liens" name="Liens_Web" placeholder="Ex: www.mon-site.com" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
+                <input type="text" id="liens" name="entry.283850978" placeholder="Ex: www.mon-site.com" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;">
               </div>
             </div>
 
@@ -203,10 +209,10 @@
               <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Quels sont vos objectifs principaux ? *</label>
               <div class="select-trigger"><span>Sélectionner vos objectifs...</span></div>
               <div class="select-options">
-                <label><input type="checkbox" name="Objectifs" value="Générer des leads"> Générer de nouveaux leads et contacts qualifiés</label>
-                <label><input type="checkbox" name="Objectifs" value="Augmenter la notoriété"> Augmenter la notoriété de votre marque et sa visibilité</label>
-                <label><input type="checkbox" name="Objectifs" value="Créer une communauté"> Créer une communauté engagée et fidèle</label>
-                <label><input type="checkbox" name="Objectifs" value="Améliorer l'image"> Améliorer l'image de marque et la crédibilité</label>
+                <label><input type="checkbox" name="entry.98508241" value="Générer de nouveaux leads et contacts qualifiés"> Générer de nouveaux leads et contacts qualifiés</label>
+                <label><input type="checkbox" name="entry.98508241" value="Augmenter la notoriété de votre marque et sa visibilité"> Augmenter la notoriété de votre marque et sa visibilité</label>
+                <label><input type="checkbox" name="entry.98508241" value="Créer une communauté engagée et fidèle"> Créer une communauté engagée et fidèle</label>
+                <label><input type="checkbox" name="entry.98508241" value="Améliorer l'image de marque et la crédibilité"> Améliorer l'image de marque et la crédibilité</label>
               </div>
             </div>
 
@@ -214,18 +220,17 @@
               <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Quelles prestations vous intéressent le plus ?</label>
               <div class="select-trigger"><span>Sélectionner les prestations...</span></div>
               <div class="select-options">
-                <label><input type="checkbox" name="Prestations" value="Création visuelle"> Création de contenu visuel (photos, infographies)</label>
-                <label><input type="checkbox" name="Prestations" value="Montage vidéo"> Montage vidéo dynamique pour Reels / TikTok</label>
-                <label><input type="checkbox" name="Prestations" value="Stratégie"> Élaboration et mise en place d'une stratégie digitale</label>
-                <label><input type="checkbox" name="Prestations" value="Gestion"> Gestion quotidienne des comptes et modération</label>
-                <label><input type="checkbox" name="Prestations" value="Reporting"> Analyse de performance et reporting mensuel</label>
-                <label><input type="checkbox" name="Prestations" value="Autre"> Autre</label>
+                <label><input type="checkbox" name="entry.1613199414" value="Création de contenu visuel (photos, infographies)"> Création de contenu visuel (photos, infographies)</label>
+                <label><input type="checkbox" name="entry.1613199414" value="Montage vidéo dynamique pour Reels / TikTok"> Montage vidéo dynamique pour Reels / TikTok</label>
+                <label><input type="checkbox" name="entry.1613199414" value="Élaboration et mise en place d'une stratégie marketing digitale complète"> Élaboration et mise en place d'une stratégie marketing digitale complète</label>
+                <label><input type="checkbox" name="entry.1613199414" value="Gestion quotidienne des comptes et modération"> Gestion quotidienne des comptes et modération</label>
+                <label><input type="checkbox" name="entry.1613199414" value="Analyse de performance et reporting mensuel"> Analyse de performance et reporting mensuel</label>
               </div>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.5rem;">
               <label for="budget" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Quel est votre budget mensuel estimé ?</label>
-              <select id="budget" name="Budget" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; background-color: #ffffff; cursor: pointer; box-sizing: border-box; color: #0d1b2a;">
+              <select id="budget" name="entry.649680559" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; background-color: #ffffff; cursor: pointer; box-sizing: border-box; color: #0d1b2a;">
                 <option value="" disabled selected>Sélectionnez une tranche</option>
                 <option value="Moins de 500€">Moins de 500€</option>
                 <option value="500€ - 1000€">500€ - 1000€</option>
@@ -236,11 +241,11 @@
 
             <div class="form-group" style="margin-bottom: 2rem;">
               <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #0d1b2a; font-size: 0.9rem;">Pouvez-vous m'en dire un peu plus sur votre projet ?</label>
-              <textarea id="message" name="Message_Projet" rows="4" placeholder="Contexte actuel, défis, historique..." style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box;"></textarea>
+              <textarea id="message" name="entry.266252228" rows="4" placeholder="Contexte actuel, défis, historique..." style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box;"></textarea>
             </div>
 
             <button type="submit" class="btn btn-pink" style="width: 100%; font-size: 1.1rem; padding: 1rem; border: none; cursor: pointer; font-weight: 600; border-radius: 8px;">
-              Envoyer ma demande 
+              Envoyer ma demande 🚀
             </button>
           </form>
         </div>
