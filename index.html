@@ -280,7 +280,8 @@
     position: relative;
     padding-left: 1.5rem;
     margin: 2rem 0;
-    border-left: 2px solid rgba(244, 184, 200, 0.3); /* Ligne verticale rose */
+    /* J'ai rendu la ligne rose un peu plus visible sur fond clair */
+    border-left: 2px solid rgba(244, 184, 200, 0.8); 
   }
 
   .timeline-step {
@@ -313,16 +314,16 @@
   .timeline-title {
     font-size: 1.15rem;
     margin: 0;
-    color: #ffffff;
+    color: #1a2f50; /* CORRECTION : Texte en bleu marine au lieu de blanc */
     display: inline-block;
-    border-bottom: 1px dashed rgba(255,255,255,0.3);
+    border-bottom: 1px dashed rgba(26, 47, 80, 0.3); /* CORRECTION : Pointillés en bleu marine transparent */
   }
 
   /* STYLE DU POP-UP (MODAL) */
   .service-modal-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(13, 27, 42, 0.85); /* Fond sombre transparent */
+    background: rgba(13, 27, 42, 0.85);
     backdrop-filter: blur(4px);
     z-index: 9999;
     display: flex;
@@ -339,7 +340,7 @@
   }
 
   .service-modal-content {
-    background: #1a2f50; /* Couleur de tes cartes */
+    background: #1a2f50;
     padding: 2rem;
     border-radius: 16px;
     width: 90%;
